@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD4EA56B-58D5-4C9D-8B03-2CB8E10F959E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Oauth2OverOrchardCMS</RootNamespace>
+    <AssemblyName>Oauth2OverOrchardCMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\..\Project\佳运通\trunk\src\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\..\..\Project\佳运通\trunk\src\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\..\..\Project\佳运通\trunk\src\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\..\..\Project\佳运通\trunk\src\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Orchard.Framework">
+      <HintPath>..\..\..\Project\佳运通\trunk\src\Orchard\bin\Debug\Orchard.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Orchard.Users">
+      <HintPath>..\..\..\Project\佳运通\trunk\src\Orchard.Web\Modules\Orchard.Users\bin\Orchard.Users.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\..\Project\佳运通\trunk\src\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constant.cs" />
+    <Compile Include="DTO\AccountDto.cs" />
+    <Compile Include="DTO\CompanyDto.cs" />
+    <Compile Include="DTO\DepartmentDto.cs" />
+    <Compile Include="DTO\EducationDto.cs" />
+    <Compile Include="DTO\EmployeDto.cs" />
+    <Compile Include="DTO\HeatingFurnacePartDto.cs" />
+    <Compile Include="DTO\MediaFileDto.cs" />
+    <Compile Include="DTO\PositionDto.cs" />
+    <Compile Include="DTO\SimpleCompanyDto.cs" />
+    <Compile Include="DTO\SimpleDepartmentDto.cs" />
+    <Compile Include="DTO\SimpleEmployeeDto.cs" />
+    <Compile Include="DTO\VehicleDto.cs" />
+    <Compile Include="DTO\ViewEmployeeDto.cs" />
+    <Compile Include="Events\AccountEventHandler.cs" />
+    <Compile Include="Events\IAccountEventHandler.cs" />
+    <Compile Include="Models\AccountPartRecord.cs" />
+    <Compile Include="Models\ActiveState.cs" />
+    <Compile Include="Models\AppClientRecord.cs" />
+    <Compile Include="Models\AppLoginMode.cs" />
+    <Compile Include="Models\CompanyRecord.cs" />
+    <Compile Include="Models\DepartmentRecord.cs" />
+    <Compile Include="Models\EducationRecord.cs" />
+    <Compile Include="Models\EmployeeRecord.cs" />
+    <Compile Include="Models\HeatingFurnacePartRecord.cs" />
+    <Compile Include="Models\OAuth2Grant.cs" />
+    <Compile Include="Models\PointPartRecord.cs" />
+    <Compile Include="Models\PositionRecord.cs" />
+    <Compile Include="Models\RefreshTokenRecord.cs" />
+    <Compile Include="Models\ResourceRecord.cs" />
+    <Compile Include="Models\SecurityCodeRecord.cs" />
+    <Compile Include="Models\VehicleRecord.cs" />
+    <Compile Include="Models\WorkingState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\DefaultAuthorizationServerProvider.cs" />
+    <Compile Include="Providers\DefaultRefreshTokenServerProvider.cs" />
+    <Compile Include="Providers\ISecurityCodeProvider.cs" />
+    <Compile Include="Providers\OAuthMiddlewareProvider.cs" />
+    <Compile Include="Providers\SecurityCodeProvider.cs" />
+    <Compile Include="Services\IAccountService.cs" />
+    <Compile Include="Services\IAppClientServices.cs" />
+    <Compile Include="Services\ICommonService.cs" />
+    <Compile Include="Services\ICompanyService.cs" />
+    <Compile Include="Services\IDepartmentService.cs" />
+    <Compile Include="Services\IEducationService.cs" />
+    <Compile Include="Services\IEmployeeService.cs" />
+    <Compile Include="Services\IMediaService.cs" />
+    <Compile Include="Services\Impl\AccountService.cs" />
+    <Compile Include="Services\Impl\AppClientServices.cs" />
+    <Compile Include="Services\Impl\AppMembershipService.cs" />
+    <Compile Include="Services\Impl\RefreshTokenServices.cs" />
+    <Compile Include="Services\Impl\SecurityCodeService.cs" />
+    <Compile Include="Services\IPositionService.cs" />
+    <Compile Include="Services\IRefreshTokenService.cs" />
+    <Compile Include="Services\ISecurityCodeService.cs" />
+    <Compile Include="Services\ISMService.cs" />
+    <Compile Include="Services\IVehicleService.cs" />
+    <Compile Include="TokenHelper.cs" />
+    <Compile Include="VerifyHelper.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
